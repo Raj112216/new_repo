@@ -1,4 +1,4 @@
-variable "friuts" {
+variable "fruits" {
     default = {
         apple = {}
         banana = {}
@@ -11,4 +11,7 @@ variable "friuts" {
   
 }
 
-for_each = var.fruits
+resource "null_resource" "fruits" {
+    for_each = var.fruits
+
+}
